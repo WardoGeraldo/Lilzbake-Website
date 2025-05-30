@@ -401,45 +401,21 @@
 
         .video-placeholder {
             width: 100%;
-            height: 500px; /* Fixed height for consistent card size */
+            height: 500px;
             position: relative;
             background: linear-gradient(135deg, #feecc8, #f8d7da);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border-radius: 20px;
+            overflow: hidden;
         }
 
-        .video-placeholder video {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover; /* Cover to fill the container properly */
+        .video-placeholder iframe {
+            width: 120%;
+            height: 120%;
+            border: none;
             position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: rgba(139, 69, 19, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            z-index: 10;
-        }
-
-        .play-button:hover {
-            transform: translate(-50%, -50%) scale(1.1);
+            top: -10%;
+            left: -10%;
+            border-radius: 20px;
         }
 
         .video-title {
@@ -453,8 +429,8 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
             z-index: 5;
+            border-radius: 0 0 20px 20px;
         }
-        
         /* Services Section */
         .services {
             padding: 80px 0;
@@ -850,7 +826,7 @@
         </div>
     </section>
 
-    <<section class="video-section">
+    <section class="video-section">
     <div class="container">
         <div class="section-title">
             <h2>Video Produk</h2>
@@ -860,25 +836,27 @@
         <div class="video-grid">
             <div class="video-card">
                 <div class="video-placeholder">
-                    <video id="video1" muted loop playsinline>
-                        <source src="{{ asset('videoBagus.mp4') }}" type="video/mp4">
-                        Browser Anda tidak mendukung tag video.
-                    </video>
-                    <div class="play-button" onclick="toggleVideo('video1', this)">
-                        <i class="fas fa-play"></i>
-                    </div>
+                    <!-- Replace VIDEO_ID_1 with your actual Google Drive file ID -->
+                    <iframe id="video1" 
+                            src="https://drive.google.com/file/d/1DHbuVLnx9eqtZCowem2uKOg-F01umRN1/preview" 
+                            width="100%" 
+                            height="100%" 
+                            allow="autoplay; encrypted-media" 
+                            allowfullscreen>
+                    </iframe>
                     <div class="video-title">Hampers Roti Premium</div>
                 </div>
             </div>
             <div class="video-card">
                 <div class="video-placeholder">
-                    <video id="video2" muted loop playsinline>
-                        <source src="{{ asset('video roti sisir.mp4') }}" type="video/mp4">
-                        Browser Anda tidak mendukung tag video.
-                    </video>
-                    <div class="play-button" onclick="toggleVideo('video2', this)">
-                        <i class="fas fa-play"></i>
-                    </div>
+                    <!-- Replace VIDEO_ID_2 with your actual Google Drive file ID -->
+                    <iframe id="video2" 
+                            src="https://drive.google.com/file/d/1-2IUS0oPP_Lbi9TdO5ZXnE3c3E9ocGVv/preview" 
+                            width="100%" 
+                            height="100%" 
+                            allow="autoplay; encrypted-media" 
+                            allowfullscreen>
+                    </iframe>
                     <div class="video-title">Roti Sisir</div>
                 </div>
             </div>
